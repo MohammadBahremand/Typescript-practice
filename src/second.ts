@@ -1,3 +1,214 @@
+// //primitive 
+// let firstName = "mohammad";
+// let isAdmin = false;
+// let age = 20 ;
+
+// let duties = ["write code " , "fix bugs"];
+// let car = null ;
+// let bicycle = undefined ;
+
+// let work = ()=>{
+// console.log("working...");
+
+// };
+
+// // let salary = 50n ;
+
+// let logo = Symbol("emerald");
+
+
+// let all = [firstName , isAdmin , age , car , bicycle , duties , work ,  , logo];
+
+// for(let item of all){
+//     console.log(String (item ) +    "is"   +    typeof item);
+    
+// }
+
+// // array 
+// const tasks:(string |number)[] = ["write code"];
+
+// tasks.push("50");
+// tasks.map(task =>{
+//     console.log(task.toString().toUpperCase());
+    
+// });
+
+
+// // tuple
+
+// let employeeLockerCode:[string , number] = ["mohammd " , 50];
+// employeeLockerCode = ["6",6];
+// employeeLockerCode.push(12); // tuple bug
+// console.log(employeeLockerCode);
+
+
+// // object 
+// const person :{
+//     name:string;
+//     age:number;
+
+// } = {
+//     name:"mohammad",
+//     age: 20
+// }
+
+// person.age=20
+
+
+// // functions 
+
+// function greet(name:string){
+//     return ("hello" + name)
+// }
+// const johnGreet = greet("john");
+
+
+// function consoleGreetJohn(name = "john"){
+//        console.log(`Hello ` + name.toUpperCase())
+
+// } // name?: its mean it is optional 
+
+// consoleGreetJohn();
+// consoleGreetJohn("mohammad");
+
+
+
+// const greetToConsole = (name:string[])=>{
+// console.log('HELLO' + name);
+
+// }
+
+
+// const greetToConsole2 = (...names:string[])=>{
+// names.forEach(name =>{
+//     greetToConsole2(name)
+// })
+// }
+ 
+// greetToConsole2("mamad");
+// greetToConsole2("mamad","ali")   
+
+
+
+// // any and unknown 
+
+// let val : any ;
+
+// // val = true ; ok
+// // val = 25 ; ok 
+// // val = "hi"; ok
+// // val = [];  ok 
+// // val ={};  ok
+// // val = Math.random; ok
+// // val = null;  ok
+// // val = undefined;   ok
+// // val = ()=>{console.log("hello")};  ok
+
+// // console.log(val.trim()); ok
+
+
+
+// // unknown 
+
+
+// // val = true ; ok
+// // val = 25 ; ok 
+// // val = "hi"; ok
+// // val = [];  ok 
+// // val ={};  ok
+// // val = Math.random; ok
+// // val = null;  ok
+// // val = undefined;   ok
+// // val = ()=>{console.log("hello")};  ok
+
+
+// val.foo.bar; // error
+// val.trim()//error
+// val(); //error
+// val[0][1]; //error
+
+
+// // if(typeof val === "string"){
+// //     console.log(val);
+    
+// // }else{
+// //     console.log(Error);
+    
+// // }
+
+
+
+// const a: any = "a";
+// const b:unknown = "b";
+
+// const v1:string = a // ok
+// const v2: string = b // error
+// const v3:string = b as string // ok
+
+// a.trim()//ok
+// b.trim()//error
+
+
+// //void 
+
+// const printInfo1 =():void=>{
+
+// }
+
+// const printInfo2 = ()=>{
+//     return undefined
+// }
+
+// // const printInfo3 = ():void=>{
+// //     return null
+// // }  error 
+
+
+// // never 
+// // const check = (value:string | number)=>{
+// //     if(typeof value === "string"){
+// //         //do somthing 
+// //     }else if (typeof value === 'number'){
+// //         // do somthings
+// //     }else{
+// //         value
+// //     }
+   
+// // }
+
+
+
+
+
+// // type Color = "red" | "green" | "blue";
+
+// // const getColor = (color:Color):string =>{
+// // switch(color){
+// //     case "red":
+// //         return "#F00"
+// //         case "green":
+// //             return "0F0"
+// //             case "blue":
+// //                 return "00F"
+// //             //@ts-ignore
+// //             case "gray":
+// //                 return "bbb"
+// //                 default :
+// //                     const otherColor:never = color;
+// //                     return otherColor
+
+// // }
+// // }
+   
+
+
+
+
+
+
+
+
+
 // const books = ["1322" , "brave new world " , "farenhan 451"];
 
 
