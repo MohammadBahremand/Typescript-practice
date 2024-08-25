@@ -122,26 +122,26 @@
 // // val = ()=>{console.log("hello")};  ok
 
 
-// val.foo.bar; // error
-// val.trim()//error
-// val(); //error
-// val[0][1]; //error
+//  val.foo.bar; // error
+//  val.trim()//error
+//  val(); //error
+//  val[0][1]; //error
 
 
-// // if(typeof val === "string"){
-// //     console.log(val);
+//  if(typeof val === "string"){
+//     console.log(val);
     
-// // }else{
-// //     console.log(Error);
+//  }else{
+//      console.log(Error);
     
-// // }
+//  }
 
 
 
-// const a: any = "a";
-// const b:unknown = "b";
+//  const a: any = "a";
+//  const b:unknown = "b";
 
-// const v1:string = a // ok
+//  const v1:string = a // ok
 // const v2: string = b // error
 // const v3:string = b as string // ok
 
@@ -643,3 +643,259 @@
 
 
 // type AnyFromType <T> = T extends (infer M)[] ? M : never 
+
+
+
+
+//////////////// mapped type 
+
+
+// type position = " developer " | "manager" | "designer" 
+
+// type PositionType = {
+//     developer:string[],
+//     manager:string[],
+//     designer:string[]
+// }
+
+
+// type PositionTypeMap ={
+//     [position in position]:string[]
+// }
+
+
+
+
+
+
+
+////////////////////////////////// Udemi cours 
+
+
+
+// let greating : string = "Hello Typescript";
+// greating = greating.toUpperCase();
+// console.log(greating);
+
+
+    // let age :number = 25
+    // age = age + 8;
+
+    // let isAdult :boolean = age >= 18
+    // isAdult = !isAdult 
+    // console.log(isAdult);
+
+
+
+
+////////////// union 
+
+    // let tax :string | number = "mohammad" 
+    // tax = 20 
+
+
+
+    // let statusRequest : "Pending" | "Error" | "Success";
+    // statusRequest = "Success"
+    // statusRequest = "random"  error
+
+
+
+//////////////////// any 
+
+// let x : any = 25
+// x = "mohammad",
+// x = true
+
+
+// const books =["1984" , "Brave new world" , "Fahrenhait 451"];
+
+// let foundBook : string | undefined
+
+// for(let book of books){
+//     if(book === "1984"){
+//         foundBook = book ;
+//         foundBook = foundBook.toUpperCase()
+//         break
+//     }
+// }
+
+// console.log(foundBook);
+
+
+
+///////// optional
+
+
+// let book = {title:"book" , cost:25}
+// let pen = {title:"pen" , cost:25}
+// let noteBook = {title:"noteBook"}
+
+// let item:{title:string , cost?:number}[] = [book , pen , noteBook]
+
+
+
+// let product1 = {title : "laptop" ,  price:120}
+// let product2 = {title : "shirt" ,  price:20}
+// let product3 = {title : "pants"}
+
+// let pruducts : { title:string ; price?:number}[] = [product1 , product2 , product3]
+// pruducts.push({title:"cap" , price:8});
+
+
+
+///////////////// functions
+
+// const names : string[] = ["mohammad" , "pouya" , "mahan"];
+
+// function isNameInList (name:string):boolean{
+//     return names.includes(name);
+// }
+
+// let nameToCHeck = "mohammad";
+
+// if(isNameInList(nameToCHeck)){
+//     console.log(`${nameToCHeck} is in list`);
+    
+// }else{
+//     console.log(`${nameToCHeck} is not in list`);
+    
+// }
+
+
+
+
+//////////////////////// good point 
+
+// function givDiscount (price:number , discount?:number){
+// return price - ( discount || 0)
+// }
+
+// givDiscount(100  , 25);
+
+
+
+// function processData (input:string | number ,config:{revers:boolean} = 
+//     {revers : false} ):string| number{
+//         if(typeof input === "number"){
+//             return input  * input
+//         }else{
+//             return config.revers? input.toUpperCase().split("").reverse().join(""):
+//             input.toUpperCase()
+//         }
+
+// }
+
+// console.log(processData(10));
+// console.log(processData("hello"));
+// console.log(processData("hi" , {revers : true}));
+
+
+// type User = {name:string , id:number , isActive:boolean};
+
+// const mamad :User = {
+//     name : "mamad",
+//     id : 2 ,
+//     isActive :true
+// }
+
+
+// function creatUser(user:User):User{
+//     console.log(`Hello there ${user.name.toUpperCase()}!!! `);
+//     return user
+// }
+
+
+// type Employee = {id : number , name:string , departement:string};
+// type Manager = {id : number , name:string , employee : Employee[]};
+
+// type Staff = Employee | Manager;
+
+
+// function printStaffDetails (staff:Staff):void
+// {
+//     if("employee" in staff){
+//         console.log(`${staff.name} is Manager with ${staff.employee.length} employees`);
+        
+//     }else{
+//         console.log(`${staff.name} is employee in the ${staff.departement} departement`);
+        
+//     }
+
+// }
+
+// const mamad : Employee = {name:"mamad" , id:2 , departement:"employee"};
+// const rajab : Employee = {name :"rajab" , id:1 , departement:"sales"};
+// const bob : Manager = {name : " bob " , id:8 , employee:[mamad , rajab]};
+
+// printStaffDetails(bob);
+// printStaffDetails(mamad);
+
+
+
+
+
+// type Book = {name:string , price:number};
+
+
+// const book1 : Book = {
+//     name : "learn js",
+//     price:120
+// }
+// /// add type 
+// const book2 :Book & {discount:number} ={
+//     name:"learn c#",
+//     price:55, 
+//     discount : 0.2
+// }
+
+
+// function  getEmployee(){
+
+//     const random  = Math.random();
+    
+//     if( random < 0.33){
+//            return {
+//             name : "john"
+//            } 
+    
+    
+//     }else if (random < 0.66  ){
+//         return {
+//             name : "sarah",
+//             dogName : "rex"
+//         }
+//     }else{
+//         return {
+//             name:"bob",
+//             managePeople(){
+//                 console.log("managing people......");
+                
+//             },
+//             delegateTasks(){
+//                 console.log("delagating Tasks.......");
+                
+//             }
+//         }
+//     }
+// }
+
+
+// interface Person {
+//     name : string,
+   
+// }
+
+
+// interface DogOwner extends Person {
+//     dogName:string
+// }
+
+// interface Manager extends Person{
+//     managePeople():void,
+//     delegateTasks():void
+// }
+
+
+// const employee:Person | DogOwner | Manager = getEmployee();
+// console.log(employee);

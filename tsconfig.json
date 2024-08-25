@@ -5,6 +5,7 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "allowJs": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -13,11 +14,15 @@
     "moduleDetection": "force",
     "noEmit": true,
 
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "second.ts"]
+"include": ["src", "second.ts", "src/**/*.ts", "src/**.ts",   "**/*.ts"
+]
+
+
 }
